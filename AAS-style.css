@@ -55,3 +55,7 @@
     transform: none;
   }
 }
+
+.centreTag {
+  text-align: center;
+}
