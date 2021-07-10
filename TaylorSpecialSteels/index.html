@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taylor Special Steels Ltd </title>
+  <style>
+    .mySlides {display:none;}
+  </style>
 </head>
 
 <body>
@@ -30,9 +33,37 @@
 
 
 
+  <div>
+    <p> Taylor Special Steels Ltd is an independent Stockholder and Distributor of High Speed Steels and Tool Steels.
+We are approved to BS EN ISO 9001 : 2015 which underlines our commitment to Quality and Service. </p>
+  </div>
+  <p> As the exclusive independent stockholder and distributor of High Speed Steel produced by Erasteel, the world's largest manufacturer of High Speed Steel, we have an unrivalled range of top quality grades and sizes. </p>
+  <p> We are also the exclusive stockholder of the famous ASP2000 trademark Powder Metallurgy range of steels for Cold Work Tooling. In 1999, Erasteel celebrated 30 years as sole manufacturer of 'ASP' steels which are now produced using the 'Dvalin' process. </p>
+  <p> With 'Dvalin' ASP steel has reached an unprecedented level of cleanliness and strength ensuring we enter the millennium with leading edge technology. </p>
 
 
+  <div class="Image Gallery" style="max-width:500px">
+    <img class="imageSlides" src="images/TSS_Building.png" style="width:100%">
+    <img class="imageSlides" src="images/TSS_InsideBuilding.png" style="width:100%">
+  </div>
+</html>
 
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("imageSlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
 
 
 <style>
