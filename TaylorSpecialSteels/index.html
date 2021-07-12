@@ -47,6 +47,17 @@ We are approved to BS EN ISO 9001 : 2015 which underlines our commitment to Qual
  With 'Dvalin' ASP steel has reached an unprecedented level of cleanliness and strength ensuring we enter the millennium with leading edge technology. </p>
 
 </div>
+
+
+
+<div id="map">
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPjM58CDFkS5N_wDbYKwhbNPkZsDL0KIE&callback=initMap&libraries=&v=weekly"
+  async
+></script>
+
+
+  </div
 </html>
 
 <script>
@@ -64,6 +75,18 @@ function carousel() {
   x[myIndex-1].style.display = "block";
   setTimeout(carousel, 2000); // Change image every 2 seconds
 }
+</script>
+<script>
+function initMap(){
+  const location= {lat:52.505920158020075 , lng:-2.0268150595374377};
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom:4,
+    center: location});
+    const marker = new google.maps.Marker({
+      position:location,
+      map: map,
+    });
+  }
 </script>
 
 
@@ -102,5 +125,10 @@ function carousel() {
     align-items:center;
     font-size:18px;
     padding-top:20px
+  }
+
+  #map{
+    height: 400px;
+    width:100%;
   }
 </style>
