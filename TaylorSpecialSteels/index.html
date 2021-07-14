@@ -36,13 +36,13 @@
 
   <div class="container-1">
 
-    <div class="Image Gallery" style="max-width:500px">
-      <img class="imageSlides" src="images/TSS_Building.png" style="max-width:15.0vw;max-height:15.0vw">
-      <img class="imageSlides" src="images/TSS_InsideBuilding.png" style="max-width:15.0vw;max-height:15.0vw">
-      <div class="centered">Taylor Special Steels Ltd is an independent Stockholder and Distributor of High Speed Steels and Tool Steels. We are approved to BS EN ISO 9001 : 2015 which underlines our commitment to Quality and Service.</div>
-      <div class="centered">As the exclusive independent stockholder and distributor of High Speed Steel produced by Erasteel, the world's largest manufacturer of High Speed Steel, we have an unrivalled range of top quality grades and sizes.</div>
-      <div class="centered">We are also the exclusive stockholder of the famous ASP2000 trademark Powder Metallurgy range of steels for Cold Work Tooling.</div>
-      <div class="cenered">In 1999, Erasteel celebrated 30 years as sole manufacturer of 'ASP' steels which are now produced using the 'Dvalin' process. With 'Dvalin' ASP steel has reached an unprecedented level of cleanliness and strength ensuring we enter the millennium with leading edge technology.</div>
+    <div class="Image Gallery" style="max-width:500vw">
+      <img class="imageSlides" src="images/TSS_Building.png">
+      <img class="imageSlides" src="images/TSS_InsideBuilding.png">
+      <div class="centered_text">Taylor Special Steels Ltd is an independent Stockholder and Distributor of High Speed Steels and Tool Steels. We are approved to BS EN ISO 9001 : 2015 which underlines our commitment to Quality and Service.</div>
+      <div class="centered_text">As the exclusive independent stockholder and distributor of High Speed Steel produced by Erasteel, the world's largest manufacturer of High Speed Steel, we have an unrivalled range of top quality grades and sizes.</div>
+      <div class="centered_text">We are also the exclusive stockholder of the famous ASP2000 trademark Powder Metallurgy range of steels for Cold Work Tooling.</div>
+      <div class="centered_text">In 1999, Erasteel celebrated 30 years as sole manufacturer of 'ASP' steels which are now produced using the 'Dvalin' process. With 'Dvalin' ASP steel has reached an unprecedented level of cleanliness and strength ensuring we enter the millennium with leading edge technology.</div>
 
   </div>
 
@@ -80,13 +80,17 @@ function carousel() {
 
 <script>
 var textIndex = 0;
-textRoatte();
+textRotate();
 
 function textRotate(){
   var index;
-  var y = documents.getElemtsByClassName("centered")
-  for(index =0;index<x.legnth;index++){}
-    y[index].style.display="block";
+  var y = document.getElementsByClassName("centered_text")
+  for (index = 0; index < y.length; index++){
+    y[index].style.display="none";
+  }
+    textIndex++;
+    if(textIndex > y.length) {textIndex = 1}
+    y[textIndex-1].style.display = "block";
     setTimeout(textRotate,5000);
 }
 </script>
@@ -136,14 +140,24 @@ function initMap(){
     padding-bottom:20px;
   }
   .container-1 {
-    /*display:flex;
-    align-items:center;*/
+    display:flex;
+    align-items:center;
     text-align:center;
     color:white;
     position:relative;
     font-size:18px;
     padding-top:20px
   }
+
+  .imageSlides{
+    display: block;
+    margin-left: auto;
+    width: 50%;
+    margin-right: auto;
+    max-width:50.0vw;
+    max-height:30.0vw
+  }
+
   .centered_text{
     position:absolute;
     top:50%;
